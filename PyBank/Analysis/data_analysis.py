@@ -56,8 +56,8 @@ max_change = max(rolling_diff)
 
 
 #calculate Min & Max month
-min_month_index = rolling_diff.index(min_change)
-max_month_index = rolling_diff.index(max_change)
+# min_month_index = rolling_diff.index(min_change)
+# max_month_index = rolling_diff.index(max_change)
 # print(f'Min month index: {min_month_index}')
 # print(f'Max month index: {max_month_index}')
 
@@ -71,3 +71,15 @@ print(f'Greatest Increase in Profits: {max_month} (${max_change})')
 print(f'Greatest Decrease in Profits: {min_month} (${min_change})')
 
 #SUCCESS!!!!!!!
+
+output_file = os.path.join("analysis.txt")
+
+#write to >txt
+
+with open(output_file, 'w', newline='') as datafile:
+    datafile.write(f'Total Months: {num_months}\n')
+    datafile.write(f'Total: ${total}\n')
+    datafile.write(f'Average Change: $ {avg_change}\n')
+    datafile.write(f'Greatest Increase in Profits: {max_month} (${max_change}\n')
+    datafile.write(f'Greatest Decrease in Profits: {min_month} (${min_change})\n')
+
